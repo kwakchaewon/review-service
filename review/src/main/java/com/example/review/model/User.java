@@ -14,6 +14,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
+
     @JsonIgnore
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
@@ -40,9 +41,9 @@ public class User {
      */
     @ManyToMany
     @JoinTable(
-            name = "user_authority",
+            name = "authority",
             joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "user_id")},
             inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "authority_name")}
     )
-    private Set<UserAuth> authorities;
+    private Set<authority> authorities;
 }

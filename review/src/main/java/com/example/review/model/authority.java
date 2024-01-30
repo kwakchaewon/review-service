@@ -15,7 +15,7 @@ import lombok.Setter;
 @Setter
 @Builder
 @AllArgsConstructor
-public class UserAuth {
+public class authority {
     @Id
     @Column(name = "authority_name", length = 50)
     private String authorityName;
