@@ -10,12 +10,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Entity
-@Table(name = "user_auth")
+@Table(name = "authority")
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
-public class authority {
+public class Authority {
     @Id
     @Column(name = "authority_name", length = 50)
     private String authorityName;

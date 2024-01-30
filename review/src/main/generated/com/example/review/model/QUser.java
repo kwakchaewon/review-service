@@ -22,7 +22,7 @@ public class QUser extends EntityPathBase<User> {
 
     public final BooleanPath activated = createBoolean("activated");
 
-    public final SetPath<authority, Qauthority> authorities = this.<authority, Qauthority>createSet("authorities", authority.class, Qauthority.class, PathInits.DIRECT2);
+    public final SetPath<Authority, QAuthority> authorities = this.<Authority, QAuthority>createSet("authorities", Authority.class, QAuthority.class, PathInits.DIRECT2);
 
     public final StringPath nickname = createString("nickname");
 

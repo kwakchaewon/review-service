@@ -41,9 +41,9 @@ public class User {
      */
     @ManyToMany
     @JoinTable(
-            name = "authority",
+            name = "user_auth",
             joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "user_id")},
             inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "authority_name")}
     )
-    private Set<authority> authorities;
+    private Set<Authority> authorities;
 }

@@ -10,27 +10,27 @@ import com.querydsl.core.types.Path;
 
 
 /**
- * Qauthority is a Querydsl query type for authority
+ * QAuthority is a Querydsl query type for Authority
  */
 @Generated("com.querydsl.codegen.DefaultEntitySerializer")
-public class Qauthority extends EntityPathBase<authority> {
+public class QAuthority extends EntityPathBase<Authority> {
 
-    private static final long serialVersionUID = -1760467143L;
+    private static final long serialVersionUID = 243500825L;
 
-    public static final Qauthority authority = new Qauthority("authority");
+    public static final QAuthority authority = new QAuthority("authority");
 
     public final StringPath authorityName = createString("authorityName");
 
-    public Qauthority(String variable) {
-        super(authority.class, forVariable(variable));
+    public QAuthority(String variable) {
+        super(Authority.class, forVariable(variable));
     }
 
-    public Qauthority(Path<? extends authority> path) {
+    public QAuthority(Path<? extends Authority> path) {
         super(path.getType(), path.getMetadata());
     }
 
-    public Qauthority(PathMetadata metadata) {
-        super(authority.class, metadata);
+    public QAuthority(PathMetadata metadata) {
+        super(Authority.class, metadata);
     }
 
 }
