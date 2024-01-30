@@ -1,4 +1,4 @@
-package com.example.review;
+package com.example.review.config;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jakarta.persistence.EntityManager;
