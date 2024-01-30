@@ -42,3 +42,4 @@ application-db.properties
 # .gitignore 파일
 .idea/*.xml
 .idea/uiDesigner.xml
+*.xml
