@@ -1,4 +1,4 @@
-HELP.md
+review/HELP.md
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
@@ -38,3 +38,7 @@ out/
 
 ### DB ###
 application-db.properties
+
+# .gitignore 파일
+.idea/*.xml
+.idea/uiDesigner.xml
