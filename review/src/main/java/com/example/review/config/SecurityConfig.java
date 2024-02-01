@@ -15,9 +15,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-
-@EnableWebSecurity
 @Configuration
+@EnableWebSecurity
 @EnableMethodSecurity(prePostEnabled = true)
 public class SecurityConfig{
 
@@ -67,7 +66,7 @@ public class SecurityConfig{
                 .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
 //                        .requestMatchers("/api/hello", "/api/authenticate", "/api/signup").permitAll()
 //                        .requestMatchers(new AntPathRequestMatcher("/hello")).permitAll()
-                        .requestMatchers("/hello").permitAll()
+                        .requestMatchers("/hello", "/api/authenticate").permitAll()
                         .anyRequest().authenticated()
                 )
 
