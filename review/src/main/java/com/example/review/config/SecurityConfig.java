@@ -66,7 +66,7 @@ public class SecurityConfig{
                 .authorizeHttpRequests((authorizeHttpRequests) -> authorizeHttpRequests
 //                        .requestMatchers("/api/hello", "/api/authenticate", "/api/signup").permitAll()
 //                        .requestMatchers(new AntPathRequestMatcher("/hello")).permitAll()
-                        .requestMatchers("/hello", "/api/authenticate").permitAll()
+                        .requestMatchers("/hello", "/api/authenticate","/api/signup").permitAll()
                         .anyRequest().authenticated()
                 )
 
