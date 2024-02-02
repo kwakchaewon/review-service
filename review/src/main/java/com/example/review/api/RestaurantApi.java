@@ -2,10 +2,20 @@ package com.example.review.api;
 
 import com.example.review.api.request.CreateAndEditMenuRequest;
 import com.example.review.api.request.CreateAndEditRestaurantReqeust;
+import com.example.review.model.RestaurantEntity;
+import com.example.review.service.RestaurantService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
+
 @RestController
+@RequiredArgsConstructor
 public class RestaurantApi {
+
+    private final RestaurantService restaurantService;
+
     @GetMapping("/restaurants")
     public String getRestaurants(){
         return "getRestaurants API";
@@ -19,11 +29,12 @@ public class RestaurantApi {
     }
 
     @PostMapping("/restaurant")
-    public String createRestaurant(
+    public RestaurantEntity createRestaurant(
             @RequestBody CreateAndEditRestaurantReqeust request
             ){
-        System.out.println("request = " + request.toString());
-        return "createRestaurant API, name = " + request.getName();
+//        System.out.println("request = " + request.toString());
+//        return "createRestaurant API, name = " + request.getName();
+        return restaurantService.createRestaurant(request);
     }
 
     @PutMapping("/restaurant/{restaurantId}")
