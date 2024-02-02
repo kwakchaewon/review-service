@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.ZonedDateTime;
+import java.util.List;
 
 @Builder
 @AllArgsConstructor
@@ -22,4 +23,7 @@ public class RestaurantEntity {
     private String name;
     private ZonedDateTime createdAt;
     private ZonedDateTime updatedAt;
+
+    @OneToMany(mappedBy = "restaurantEntity", cascade = CascadeType.REMOVE)
+    private List<MenuEntity> menuList;
 }

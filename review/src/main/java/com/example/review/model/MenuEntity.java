@@ -21,4 +21,7 @@ public class MenuEntity {
 
     private ZonedDateTime createdAt;
     private ZonedDateTime updatedAt;
+
+    @ManyToOne
+    private RestaurantEntity restaurantEntity;
 }
