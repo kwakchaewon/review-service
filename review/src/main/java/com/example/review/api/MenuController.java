@@ -1,5 +1,6 @@
 package com.example.review.api;
 
+import com.example.review.api.request.CreateSingleMenuRequest;
 import com.example.review.model.MenuEntity;
 import com.example.review.service.MenuService;
 import lombok.RequiredArgsConstructor;
@@ -25,8 +26,9 @@ public class MenuController {
     @PostMapping("")
     public String createMenu(
             @PathVariable Long restaurantId,
-
-    ){
+            @RequestBody CreateSingleMenuRequest createSingleMenuRequest
+            ){
+        menuService.createMenu(createSingleMenuRequest, restaurantId);
         return "success";
     }
 
