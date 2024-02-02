@@ -7,6 +7,7 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.processing.Generated;
 import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
@@ -16,6 +17,8 @@ import com.querydsl.core.types.Path;
 public class QMenuEntity extends EntityPathBase<MenuEntity> {
 
     private static final long serialVersionUID = -375218932L;
+
+    private static final PathInits INITS = PathInits.DIRECT2;
 
     public static final QMenuEntity menuEntity = new QMenuEntity("menuEntity");
 
@@ -27,20 +30,31 @@ public class QMenuEntity extends EntityPathBase<MenuEntity> {
 
     public final NumberPath<Integer> price = createNumber("price", Integer.class);
 
+    public final QRestaurantEntity restaurantEntity;
+
     public final NumberPath<Long> restaurantId = createNumber("restaurantId", Long.class);
 
     public final DateTimePath<java.time.ZonedDateTime> updatedAt = createDateTime("updatedAt", java.time.ZonedDateTime.class);
 
     public QMenuEntity(String variable) {
-        super(MenuEntity.class, forVariable(variable));
+        this(MenuEntity.class, forVariable(variable), INITS);
     }
 
     public QMenuEntity(Path<? extends MenuEntity> path) {
-        super(path.getType(), path.getMetadata());
+        this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
     public QMenuEntity(PathMetadata metadata) {
-        super(MenuEntity.class, metadata);
+        this(metadata, PathInits.getFor(metadata, INITS));
+    }
+
+    public QMenuEntity(PathMetadata metadata, PathInits inits) {
+        this(MenuEntity.class, metadata, inits);
+    }
+
+    public QMenuEntity(Class<? extends MenuEntity> type, PathMetadata metadata, PathInits inits) {
+        super(type, metadata, inits);
+        this.restaurantEntity = inits.isInitialized("restaurantEntity") ? new QRestaurantEntity(forProperty("restaurantEntity")) : null;
     }
 
 }

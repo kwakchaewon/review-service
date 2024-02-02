@@ -7,6 +7,7 @@ import com.querydsl.core.types.dsl.*;
 import com.querydsl.core.types.PathMetadata;
 import javax.annotation.processing.Generated;
 import com.querydsl.core.types.Path;
+import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
@@ -24,6 +25,8 @@ public class QRestaurantEntity extends EntityPathBase<RestaurantEntity> {
     public final DateTimePath<java.time.ZonedDateTime> createdAt = createDateTime("createdAt", java.time.ZonedDateTime.class);
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
+
+    public final ListPath<MenuEntity, QMenuEntity> menuList = this.<MenuEntity, QMenuEntity>createList("menuList", MenuEntity.class, QMenuEntity.class, PathInits.DIRECT2);
 
     public final StringPath name = createString("name");
 
