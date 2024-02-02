@@ -1,5 +1,7 @@
 package com.example.review.api;
 
+import com.example.review.api.request.CreateAndEditMenuRequest;
+import com.example.review.api.request.CreateAndEditRestaurantReqeust;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,15 +19,20 @@ public class RestaurantApi {
     }
 
     @PostMapping("/restaurant")
-    public String createRestaurant(){
-        return "createRestaurant API";
+    public String createRestaurant(
+            @RequestBody CreateAndEditRestaurantReqeust request
+            ){
+        System.out.println("request = " + request.toString());
+        return "createRestaurant API, name = " + request.getName();
     }
 
     @PutMapping("/restaurant/{restaurantId}")
     public String editRestaurant(
-            @PathVariable Long restaurantId
+            @PathVariable Long restaurantId,
+            @RequestBody CreateAndEditRestaurantReqeust request
     ){
-        return "editRestaurant API";
+        request.toString();
+        return "editRestaurant API, name = " + request.getName();
     }
 
     @DeleteMapping("/restaurant/{restaurantId}")
